@@ -1,18 +1,23 @@
 # Automação QA
 
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 Esta documentação tem como objetivo auxiliar na compreensão da arquitetura do framework de automação.
 
 **Seções:**
 
- [Automação QA](#automação-qa)
-  - [Instalação e Execução do Projeto](#instalação-e-execução-do-projeto)
-    - [Instalação NodeJs](#instalação-nodejs)
-    - [Instalação Visual Studio Code](#instalação-visual-studio-code)
-    - [Execução do Projeto](#execução-do-projeto)
-      - [Extensões](#extensões)
-  - [Sobre Padrão Page Object ("Serviços")](#sobre-padrão-page-object)
-  - [Arquitetura do projeto e framework de automação](#arquitetura-do-projeto-e-framework-de-automação)
-   
+- [Instalação e Execução do Projeto](#instalação-e-execução-do-projeto)
+  - [Instalação NodeJs](#instalação-nodejs)
+  - [Instalação Visual Studio Code](#instalação-visual-studio-code)
+  - [Execução do Projeto](#execução-do-projeto)
+    - [Extensões](#extensões)
+- [Sobre Padrão Page Object ("Serviços")](#sobre-padrão-page-object)
+- [Arquitetura do projeto e framework de automação](#arquitetura-do-projeto-e-framework-de-automação)
+- [Integração Contínua](#integração-contínua)
+- [Licença](#licença)
+- [Contribuição](#contribuição)
+- [Contato](#contato)
 
 ## Instalação e Execução do Projeto
 
@@ -52,7 +57,7 @@ Após as instalações do NodeJs e do VScode, vamos baixar o projeto do git.
 
 **4**. A próxima etapa é executar o comando ```./node_modules/.bin/cypress open```  ou ``` npx cypress open ``` para abrir o Cypress.
 
-**Pronto!** 
+**Pronto!**
 
 #### Extensões
 
@@ -87,3 +92,11 @@ Ele serve para separar responsabilidades, ou seja:
 - **integration/step_definitions**: Nessa pasta guardaremos os métodos steps associados ao BDD.
 - **fixtures**: Arquivos de massas a serem usadas na automação, sendo estáticas ou dinâmicas.
 - **Services**: Representa abstração de páginas, com métodos e seus elementos.
+
+## Integração Contínua
+
+O projeto utiliza um pipeline de CI/CD definido no `Jenkinsfile`, que usa Docker com a imagem `cypress/base:latest`. As etapas incluem `Setup` (com `npm ci`) e `Tests` (com `npm run test`).
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
